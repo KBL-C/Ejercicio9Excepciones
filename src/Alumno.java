@@ -19,5 +19,20 @@ public class Alumno {
     private String nombre;
     ArrayList<Double> notas = new ArrayList();
     
+    /**
+     * Constructor por defecto donde donde inicializamos el atributo nombre a vacío.
+     */
+
+    public Alumno() {
+        nombre = "";
+    }
+    /**
+     * Contructor por parámetros donde, el nombre lo igualamos a una nueva variable, nuevo nombre
+     * @param nombre el nombre del alumno
+     */
+    public Alumno(String nombre) {
+        this.nombre = nombre;
+    }
+
     
 }
