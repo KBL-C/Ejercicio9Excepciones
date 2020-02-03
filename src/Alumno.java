@@ -81,6 +81,45 @@ public class Alumno {
         }
         
     }
+    
+    /**
+     * método que sirve para modificar una nota. para ello le indicamso una posicón y una nota para que ponga esa nueva nota en la posición indicada.
+     * en caso de que la nota no sea válida como en el caso anterior se lanzara la misma excepción que antes.
+     * @param posicion la posición que le indicamos para modificar su valor
+     * @param nnota la nueva nota modificada
+     * @throws RangoException excepción en caso de que la nota este fuera del rango
+     * @throws IndexOutOfBoundsException  excepción en caso de que la posición de array list o sea válida es decir, 
+     * en caso de que le indiquemos una posición que no esté en el arrayList.
+     * Hacemos lo mismo que en el caso anterior, utilizamos un try catch para recoger los errores
+     * En este caso se lanzan dos excepsiones, uno para la nota y otro para el array.
+     */
+    public void modificarNota(int posicion, double nnota) throws RangoException, IndexOutOfBoundsException{
+        try{
+            for (int i = 0; i < notas.size(); i++) {
+                if(nnota < 0 || nnota > 10){
+                    throw new RangoException("Error, nota no válida");//excepción de erro no ta no válida
+                }
+
+                if (posicion != notas.get(i)){
+                     throw new IndexOutOfBoundsException("Posición not válida"); //excepción de la posición del array no válido
+                }
+
+                notas.set(posicion, nnota);//en caso de que no suceda ningun error, se establece la nueva nota en la posición indicada.
+
+            }
+        }catch(RangoException | IndexOutOfBoundsException ex){
+            /**
+             * Qui utilizamos "instance of" ya que tenemos dos excepciones, para que según la excepción mostremos un mensaje distinto.
+             */
+            if(ex instanceof RangoException){
+                System.out.println(ex.getMessage());
+            }
+            if(ex instanceof IndexOutOfBoundsException){
+                System.out.println(ex.getMessage());
+            }
+            
+        }
+    }
 
     
 }
