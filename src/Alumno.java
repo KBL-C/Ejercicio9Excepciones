@@ -33,6 +33,23 @@ public class Alumno {
     public Alumno(String nombre) {
         this.nombre = nombre;
     }
+    
+    //getters
+    /**
+     * método obtener nombre
+     * @return nombre del alumno
+     */
+    public String getNombre() {
+        return nombre;
+    }
+    //Setters
+    /**
+     * método para modificar el nombre del alumno
+     * @param nombre es el nuevo nombre del alumno
+     */
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
 
     
 }
