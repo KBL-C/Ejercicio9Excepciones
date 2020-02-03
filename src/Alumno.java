@@ -121,7 +121,17 @@ public class Alumno {
         }
     }
     
-    
+    /**
+     * método que muestra todas las notas del alumno utilizando un bucel for, vamos motrando todas las posiciones de arraylist.
+     */
+    public void imprimirCalificaciones(){
+        System.out.println("Las notas del alumno son: ");
+        for (int i = 0; i < notas.size(); i++) {
+            
+            System.out.println(notas.get(i));
+           
+        }
+    }
 
     
 }
