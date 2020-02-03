@@ -3,9 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ejer9_rangoexception;
 
+
+import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *Esta es la clase principal donde creamos el objeto ALumno y probamso todos los métodos.
@@ -16,9 +19,9 @@ public class Ejer9_RangoException {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
-        
-        Scanner sc = new Scanner(System.in);
+    public static void main(String[] args) {       
+        try {
+            Scanner sc = new Scanner(System.in);
             Scanner sci = new Scanner(System.in);
             Scanner scd = new Scanner(System.in);
             Alumno alumno = new Alumno();          
@@ -33,6 +36,16 @@ public class Ejer9_RangoException {
             alumno.imprimirCalificaciones();
             
             System.out.println(alumno.toString());
+            
+        } catch (RangoException | IndexOutOfBoundsException ex) {
+            if(ex instanceof RangoException){
+                System.out.println("Fuera de rando");
+            }
+            if(ex instanceof IndexOutOfBoundsException){
+                System.out.println("fuera de posicion");
+            }
+            //Logger.getLogger(Ejer9_RangoException.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
     
 }
