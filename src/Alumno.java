@@ -25,7 +25,7 @@ public class Alumno {
      */
 
     public Alumno() {
-        nombre = "";
+        nombre = "";;
     }
     /**
      * Contructor por parámetros donde, el nombre lo igualamos a una nueva variable, nuevo nombre
